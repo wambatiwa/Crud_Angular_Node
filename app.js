@@ -9,7 +9,7 @@ const errorController = require("./controllers/error");
 
 const app = express();
 
-const ports = process.env.PORT || 3000;
+const port = process.env.PORT || 3002;
 
 app.use(bodyParser.json());
 
@@ -31,4 +31,8 @@ app.use(errorController.get404);
 app.use(errorController.get500);
 
 
-app.listen(ports,() => console.log(`listening on port ${ports}`));
+const server = app.listen(port, () => {
+    const address = server.address();
+    console.log(`Server is running on ${address.address}:${address.port}`);
+});
+module.exports = app;

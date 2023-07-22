@@ -18,7 +18,7 @@ exports.postGrocery = async (req,res,next) => {
         res.status(201).json(postResponse);
        } catch(err) {
         if(!err.statusCode) {
-            err.statusCode = 500;
+            err.statusCode = 400;
         }
         next(err);
     }

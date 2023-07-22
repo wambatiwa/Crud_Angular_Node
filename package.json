@@ -4,17 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "test": "SET NODE_ENV=test&& mocha test/*.js",
+    "seed": "SET NODE_ENV=test&& node seeds/seed-data.js",
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.1",
+    "chai-http": "^4.4.0",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "mysql2": "^2.3.3",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "sinon": "^15.2.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "dotenv": "^16.3.1",
+    "mocha": "^10.2.0"
   }
 }

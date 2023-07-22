@@ -6,6 +6,8 @@ const router = express.Router();
 
 router.get("/",groceryController.getAllGroceries);
 
+router.get("/:id",groceryController.getAllGroceries);
+
 router.post("/",groceryController.postGrocery);
 
 router.put("/",groceryController.updateGrocery);
